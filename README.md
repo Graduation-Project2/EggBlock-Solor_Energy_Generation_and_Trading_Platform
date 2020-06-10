@@ -1,1 +1,1 @@
-# EggBlock-Solor_Energy_Generation_and_Trading_Platform
+## EggBlock : Solor Energy Generation and Trading Platform
