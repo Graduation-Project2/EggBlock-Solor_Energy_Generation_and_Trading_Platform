@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>에너지 거래</title>
+
+  <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
+  <link rel="stylesheet" href="assets/css/shared/style.css">
+  <link rel="stylesheet" href="assets/css/demo_1/style.css">
+  <link rel="shortcut icon" href="asssets/images/favicon.ico" />
+</head>
+
+<body class="header-fixed">
+  <!-- partial:partials/_header.html -->
+  <nav class="t-header">
+    <div class="t-header-brand-wrapper">
+      <a href="index.html">
+        <p style="color:rgb(80, 80, 80);font-weight:bold">SEN</p>
+        <!-- <img class="logo" src="../assets/images/logo.svg" alt="">
+          <img class="logo-mini" src="../assets/images/logo_mini.svg" alt=""> -->
+      </a>
+    </div>
+    <div class="t-header-content-wrapper">
+      <div class="t-header-content">
+        <button class="t-header-toggler t-header-mobile-toggler d-block d-lg-none">
+          <i class="mdi mdi-menu"></i>
+        </button>
+        <ul class="nav ml-auto"></ul>
+      </div>
+    </div>
+  </nav>
+  <!-- partial -->
+  <div class="page-body">
+    <!-- partial:partials/_sidebar.html -->
+    <div class="sidebar">
+      <ul class="navigation-menu">
+        <li></li>
+        <li class="nav-category-divider">MAIN</li>
+        <li>
+          <a href="index.html">
+            <span class="link-title">에너지 거래</span>
+            <i class="mdi mdi-gauge link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="account.html?id=0x38a0D2f379943561038680b064d54d548a3B8041">
+            <span class="link-title">계정 조회</span>
+            <i class="mdi mdi-gauge link-icon"></i>
+          </a>
+        </li>
+        <li class="nav-category-divider">DOCS</li>
+        <li>
+          <a href="https://ropsten.etherscan.io/address/0xef1c2d8e7c819ff2fa8eae40e27b53f9c676735c">
+            <span class="link-title">SmartContract</span>
+            <i class="mdi mdi-chart-donut link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Graduation-Project2/Energy-trading-platform/">
+            <span class="link-title">Github</span>
+            <i class="mdi mdi-asterisk link-icon"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- partial -->
+    <div class="page-content-wrapper">
+      <div class="page-content-wrapper-inner">
+        <div class="content-viewport">
+          <div class="row">
+            <div class="col-12 py-5">
+              <h4>에너지 거래</h4>
+              <p class="text-gray">환영합니다.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-6 equel-grid">
+              <div class="grid">
+                <div class="grid-body text-gray">
+                  <div class="d-flex justify-content-between">
+                    <p>USDT/ETH</p>
+                    <span class="btn action-btn btn-xs component-flat" data-toggle="tooltip" data-placement="left"
+                      title="Available balance since the last week">
+                      <i class="mdi mdi-information-outline text-muted mdi-2x"></i>
+                    </span>
+                  </div>
+                  <p class="text-black">1ETH = </p>
+                  <p class="text-black" id="ETHPrice1">$---</p>
+                  <div class="wrapper w-50 mt-4">
+                    <canvas height="45" id="stat-line_1"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-6 equel-grid">
+              <div class="grid">
+                <div class="grid-body text-gray">
+                  <div class="d-flex justify-content-between">
+                    <p>ETH/SEN</p>
+                  </div>
+                  <p class="text-black">1ETH = <br>10SEN</p>
+                  <div class="wrapper w-50 mt-4">
+                    <canvas height="45" id="stat-line_2"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-6 equel-grid">
+              <div class="grid">
+                <div class="grid-body text-gray">
+                  <div class="d-flex justify-content-between">
+                    <p>title</p>
+                    <p>detail</p>
+                  </div>
+                  <p class="text-black">content</p>
+                  <div class="wrapper w-50 mt-4">
+                    <canvas height="45" id="stat-line_3"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-6 equel-grid">
+              <div class="grid">
+                <div class="grid-body text-gray">
+                  <div class="d-flex justify-content-between">
+                    <p>title</p>
+                    <p>detail</p>
+                  </div>
+                  <p class="text-black">content</p>
+                  <div class="wrapper w-50 mt-4">
+                    <canvas height="45" id="stat-line_4"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-lg-5 col-md-6 col-sm-12 equel-grid">
+              <div class="grid">
+                <div class="grid-body">
+                  <div class="split-header">
+                    <p class="card-title">컨트렉트에 저장된 값</p>
+                  </div>
+                  <div class="d-flex align-items-end mt-2">
+                    <h3><span id="storedData">undefined</span></h3>
+                  </div>
+                  <br>
+                  <div class="d-flex mt-2">
+                    <div class="wrapper d-flex pr-4">
+                      <small class="text-success font-weight-medium mr-2">현재블록</small>
+                      <small class="text-gray"><span id="lastBlock">undefined</span></small>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <button class="btn btn-outline-light text-gray component-flat w-50 mr-2" type="button"
+                      onclick="getValue()">새로고침</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="col-lg-5 col-md-6 col-sm-12 equel-grid">
+              <div class="grid">
+                <div class="grid-body">
+                  <div class="split-header">
+                    <p class="card-title">나의 자산</p>
+                    <span class="btn action-btn btn-xs component-flat" data-toggle="tooltip" data-placement="left"
+                      title="Available balance since the last week">
+                      <i class="mdi mdi-information-outline text-muted mdi-2x"></i>
+                    </span>
+                  </div>
+                  <div class="d-flex align-items-end mt-2">
+                    <h3><span id="storedETH">0</span></h3>
+                    <p class="ml-1 font-weight-bold">ETH</p>
+                  </div>
+                  <div class="d-flex align-items-end mt-2">
+                    <h3><span id="storedSEN">0</span></h3>
+                    <p class="ml-1 font-weight-bold">SEN Token</p>
+                  </div>
+                  <br>
+                  <div class="d-flex mt-2">
+                    <div class="wrapper d-flex pr-4">
+                      <small class="text-success font-weight-medium mr-2">현재블록</small>
+                      <small class="text-gray"><span id="lastBlock">undefined</span></small>
+                    </div>
+                    <div class="wrapper d-flex">
+                      <small class="text-primary font-weight-medium mr-2">ETH</small>
+                      <small class="text-gray" id="ETHPrice2">$---</small>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <button class="btn btn-outline-light text-gray component-flat w-50 mr-2" type="button"
+                      onclick="getValue()">새로고침</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7 col-md-12 equel-grid">
+              <div class="grid widget-revenue-card">
+                <div class="grid-body d-flex flex-column h-100">
+                  <div class="split-header">
+                    <p class="card-title">컨트렉트 주소</p>
+                    <!-- <div class="content-wrapper v-centered">
+                        <small class="text-muted">2h ago</small>
+                        <span class="btn action-btn btn-refresh btn-xs component-flat">
+                          <i class="mdi mdi-autorenew text-muted mdi-2x"></i>
+                        </span>
+                      </div> -->
+                  </div>
+                  <div class="">
+                    <!-- <canvas id="cpu-performance" height="80"></canvas> -->
+                    <h3 class="font-weight-medium mt-4" style="text-overflow: ellipsis;overflow: hidden; "><span
+                        id="contractAddr"></span></h3>
+                    <br>
+                    <p class="text-gray">내 어카운트 주소</p>
+                    <h3 class="font-weight-medium mt-4" style="text-overflow: ellipsis;overflow: hidden; "><span
+                        id="accountAddr"></span></li>
+                    </h3>
+
+                    <!-- <div class="w-50">
+                        <div class="d-flex justify-content-between text-muted mt-3">
+                          <small>Usage</small> <small>35.62 GB / 2TB</small>
+                        </div>
+                        <div class="progress progress-slim mt-2">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 68%" aria-valuenow="68"
+                            aria-valuemin="0" aria-valuemax="100">
+                          </div>
+                        </div>
+                      </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-md-6 col-sm-12 equel-grid">
+              <div class="grid">
+                <div class="grid-body">
+                  <div class="split-header">
+                    <p class="ml-1 font-weight-bold">거래</p>
+                  </div>
+                  <br>
+
+                  <div>주문수량</div>
+                  <div class="d-flex align-items-end mt-2">
+                    <input type="text" class="form-control" id="ordercount" value = "0" placeholder="수량" autocomplete="off">
+                  </div>
+
+                  <br>
+
+                  <div>주문가격</div>
+                  <div class="d-flex align-items-end mt-2">
+                    <input type="text" class="form-control" id="orderprice" readonly value = "0" placeholder="가격" autocomplete="off">
+                  </div>
+
+                  <br>
+
+                  <div class="d-flex mt-2">
+                    <div class="wrapper d-flex pr-4">
+                      <small class="text-success font-weight-medium mr-2">달러 환산 :</small>
+                      <small class="text-gray">
+                        <div><p id="infoo">$0</p></div>
+                      </small>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <button class="btn" id="buyy" type="button" onclick="setValue()"
+                      style="width:100%;margin:5px;background-color:#e02745;color:#fff">에너지 구매</button>
+                    <!-- <button class="btn" type="button" onclick="setValue()"
+                      style="width:190px;margin:5px;background-color:#1a63b2;color:#fff"">매도</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class=" col-lg-7 col-md-12 equel-grid">
+                      <div class="grid widget-revenue-card" style="padding-top:20px;padding-right:20px">
+                        <div id="chartdiv" style="width:100%;height:340px"></div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <footer class="footer">
+              <div class="row">
+                <div class="col-sm-6 text-center text-sm-right order-sm-1">
+                  <ul class="text-gray">
+                    <li><a href="#">Terms of use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-6 text-center text-sm-left mt-3 mt-sm-0">
+                  <small class="text-muted d-block">Copyright © 2019 <a href="" target="_blank">SEN</a>. All
+                    rights
+                    reserved</small>
+                </div>
+              </div>
+            </footer>
+
+          </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src=" https://www.amcharts.com/lib/3/amcharts.js"> </script>
+        <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+        <script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+        <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+        <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css"
+          media="all" />
+        <script src="https://www.amcharts.com/lib/3/themes/dark.js"></script>
+        <script src="assets/ethprice.js"></script>
+
+        <script src="assets/vendors/js/core.js"></script>
+        <script src="assets/vendors/apexcharts/apexcharts.min.js"></script>
+        <script src="assets/vendors/chartjs/Chart.min.js"></script>
+        <script src="assets/js/charts/chartjs.addon.js"></script>
+        <script src="assets/js/template.js"></script>
+        <script src="assets/js/dashboard.js"></script>
+
+        <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+        <script src="assets/meta.js"></script>
+</body>
+
+</html>
